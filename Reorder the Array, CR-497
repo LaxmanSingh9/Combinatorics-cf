@@ -1,0 +1,9 @@
+#sort the array and use,two pointers
+#one pointer for small element and another for bigger element
+n=int(input())
+arr=list(map(int,input().split()));arr=sorted(arr)
+i=0;j=1;ans=0
+while i<n and j<n:
+ if arr[i]<arr[j]:i+=1;j+=1;ans+=1
+ else:j+=1
+print(ans)
