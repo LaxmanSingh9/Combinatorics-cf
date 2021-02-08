@@ -1,0 +1,23 @@
+'count the total no. of one and zero in each row and col.'
+'make all the combinations of zero and one in each row and column'
+'nc1+nc2+nc3...ncn=2**n-1'
+'In the end subtrcat n*m,penality for counting each cell twice'
+
+#code
+n,m=map(int,input().split());arr=[]
+for i in range(n):
+  a=list(map(int,input().split()));arr.append(a)
+ans=0
+for i in arr:
+ k1=i.count(0);k2=i.count(1)
+ ans+=(2**k1)-1
+ ans+=(2**k2)-1   #for row
+#print(ans)
+for i in range(m):
+ one,zero=0,0
+ for j in range(n):  #for  col
+   if arr[j][i]==0:zero+=1
+   else:one+=1
+ ans+=(2**zero)-1
+ ans+=(2**one)-1
+print(ans-(n*m))
